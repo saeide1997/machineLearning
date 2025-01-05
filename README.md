@@ -1,8 +1,8 @@
-#Machine Learning Drawing Recognition App
+# Machine Learning Drawing Recognition App
     This is a JavaScript-based application that uses machine learning to recognize user-drawn images. Users can draw on the canvas, and the application predicts the object or shape using a trained machine learning model.
 
 
-##Features
+## Features
 	•	**AI-Powered Recognition:** Leveraging a machine learning model to classify hand-drawn images.
 	•	**Interactive User Experience:** Intuitive canvas interface for drawing.
 	•	**Customizable Model:** Easily replace or update the ML model to improve prediction accuracy.
@@ -14,20 +14,20 @@
     The result is displayed to the user in real time.
 
 
-##Technologies Used
+## Technologies Used
 	•	**JavaScript:** For application logic and integration.
 	•	**HTML5 Canvas:** To create an interactive drawing area.
 	•	**TensorFlow.js (or similar):** For deploying and running the ML model directly in the browser.
 	•	**CSS:** For styling the UI.
     
-###Getting Started
+### Getting Started
 
-####Prerequisites
+#### Prerequisites
 	•	A modern browser (e.g., Chrome, Firefox, Edge) with JavaScript enabled.
 	•	Basic knowledge of HTML and JavaScript if you want to customize the code.
     
 
-####Installation
+#### Installation
 
     Clone the repository:
 
@@ -36,14 +36,14 @@
     Open index.html in your browser.
 
 
-##Usage
+## Usage
 
     Open the app in your browser.
     Use the canvas to draw a shape or object.
     Wait for the prediction to appear below the canvas, along with a confidence score.
 
 
-###Model Training and Integration
+### Model Training and Integration
 
     The application uses a pre-trained machine learning model for image recognition. You can train your own model using datasets like Quick, Draw! or any custom dataset.To integrate a new model:
 
@@ -52,9 +52,9 @@
     Replace the existing model file and update the prediction logic in the JavaScript code.
 
 
-##Contribution 
+## Contribution 
     Contributions are welcome! Feel free to fork this repository, open issues, or submit pull requests.
 
 
-##License
+## License
     This project is licensed under the MIT License.
