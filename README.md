@@ -32,7 +32,7 @@ The result is displayed to the user in real time.
 #### Installation
 Clone the repository:
 
-git clone https://github.com/your-username/ml-drawing-recognition.git cd ml-drawing-recognition
+git clone https://github.com/saeide1997/machineLearning.git
 
 Open index.html in your browser.
 
