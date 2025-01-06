@@ -1,22 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, maximum-scale=0.9, user-scalable=0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, maximum-scale=0.9, user-scalable=0"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Data Creator</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="content">
-        <h1>Data Creator</h1>
-        <br>
-        <div id="sketchPadC"></div>
+      <h1>Data Creator</h1>
+      <div>
+        <input
+          type="text"
+          name=""
+          placeholder="Type Your Name"
+          id="documentData"
+        />
+        <span id="inst"></span>
+        <button id="startBtn" onclick="start()">Start</button>
+      </div>
+      <br />
+      <div id="sketchPadC" style="visibility: hidden"></div>
     </div>
     <script src="js/sketchPad.js"></script>
     <script src="js/draw.js"></script>
     <script>
-        const sketchPad = new SketchPad(sketchPadC)
+      const labels = ["car", "fish", "tree", "glass"];
+      const data = {
+        documentData: null,
+        session: new Date().getTime(),
+        drawings: {},
+      };
+      const sketchPad = new SketchPad(sketchPadC);
+
+      function start() {
+        if (documentData.value == "") {
+          alert("Please Type Your Name First");
+          return;
+        }
+
+        data.documentData = documentData.value;
+        documentData.style.display = "none";
+        sketchPadC.style.visibility = "visible";
+
+        const label = labels[index];
+
+        inst.innerHTML = "please draw a " + label;
+        startBtn.innerHTML = "Next";
+        startBtn.onclick = next;
+      }
+
+      function next() {
+        if (sketchPad.paths.length == 0) {
+          alert("Draw Something First!");
+          return;
+        }
+
+        const label = labels[index];
+        data.drawings[label] = sketchPad.paths;
+        sketchPad.reset();
+
+        index++;
+
+        if (index < labels.length) {
+          const nextLabel = labels[index];
+          inst.innerHTML = "please draw a " + nextLabel;
+        }else{
+            sketchPadC.visibility = 'hidden'
+            inst.innerHTML = 'Thank You'
+            startBtn.innerHTML = 'Save'
+            startBtn.onclick = save
+        }
+
+        function save(){
+          saveBtn.style.display = 'none'
+          inst.innerHTML = 'Take Your Downloaded File And Place It Alongside The Others In The Dataset!'
+
+          const element = document.createElement('a')
+          element.setAttribute('href', 'data:text/plain; charset = utf-8,' + encodeURIComponent(JSON.stringify(data)))
+
+          const fileName =  data.session+ '.json'
+          element.style.display = 'none'
+          document.body.appendChild(element)
+          element.click()
+          document.body.removeChild(element)
+        }
+      }
     </script>
-</body>
+  </body>
 </html>

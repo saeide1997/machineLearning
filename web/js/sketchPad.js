@@ -17,13 +17,19 @@ class SketchPad {
         this.undoBtn.disabled = true 
         container.appendChild(this.undoBtn)
 
+        this.reset()
 
         this.ctx = this.canvas.getContext('2d');
 
-        this.paths = []
-        this.isDrawing = false
 
         this.#addEventListeners();
+    }
+
+    reset(){
+
+        this.paths = []
+        this.isDrawing = false
+        this.#redraw()
     }
 
     #addEventListeners() {
