@@ -21,3 +21,5 @@ draw.paths = (ctx, paths, color = 'pink')=>{
         draw.path(ctx, path, color)
     }
 }
+
+module.exports = draw
