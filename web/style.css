@@ -9,7 +9,24 @@ body{
     transform: translate(-50%, -50%);
     text-align: center;
 }
-
-#sketchPad{
-
+.row{
+    display: flex;
+    align-items: center;
+}
+.thumb{
+    width: 100% !important;
+}
+.rowLabel{
+    flex: 2 1 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.sampleCn{
+    flex: 1 1 0;
+    background-color: white;
+    text-align: center;
+    border-radius: 10%;
+    margin: 1px;
+    overflow: hidden;
 }

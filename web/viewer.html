@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Data Viewer</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Data Viewer</h1>
     <div id="container"></div>
     <script src="../common/jsObjects/samples.js"></script>
@@ -14,15 +14,15 @@
     <script src="js/display.js"></script>
 
     <script>
-        console.log(samples);
-        const groups = utils.groupBy(samples, "userID")
-        //-- Create Table
+      // console.log(samples);
+      const groups = utils.groupBy(samples, "userID");
+      //-- Create Table
 
-        for(let userID in groups){
-            const samples = groups[userID]
-            const userName = samples[0].userName
-            createRow(container, userName, samples)
-        }
+      for (let userID in groups) {
+        const samples = groups[userID];
+        const userName = samples[0].userName;
+        createRow(container, userName, samples);
+      }
     </script>
-</body>
+  </body>
 </html>

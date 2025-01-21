@@ -10,9 +10,16 @@ function createRow(container, userName, samples){
 
     for(let sample of samples){
         const {id, label} = sample
+
+        const sampleCn = document.createElement('div')
+        sampleCn.id = 'sample_'+id
+        sampleCn.classList.add('sampleCn')
+
         const img = document.createElement('img')
         img.src = constants.IMG_DIR + '/' + id + '.png'
         img.classList.add('thumb')
-        row.appendChild(img)
+
+        sampleCn.appendChild(img)
+        row.appendChild(sampleCn)
     }
 }
