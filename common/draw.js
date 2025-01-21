@@ -22,4 +22,4 @@ draw.paths = (ctx, paths, color = 'pink')=>{
     }
 }
 
-module.exports = draw
+(typeof module !== 'undefined') && (module.exports = draw)

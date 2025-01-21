@@ -77,9 +77,7 @@ class SketchPad {
 
     #redraw() {
         // 0,0 top left of the corner and going all the way with this.canvas.width, this.canvas.height
-        this.ctx.clearRect(0, 0,
-            this.canvas.width, this.canvas.height
-        )
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
         draw.paths(this.ctx, this.paths) // draw is the utility function than introduce in draw.js
 
         if(this.paths.length > 0 ){
