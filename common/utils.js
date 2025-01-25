@@ -1,5 +1,16 @@
 const utils = {}
 
+utils.styles = {
+    car: {color: 'gray', text: '🚙'},
+    fish: {color: 'red', text: '🐠'},
+    house: {color: 'pink', text: '🏠'},
+    tree: {color: 'green', text: '🌴'},
+    bicycle: {color: 'blue', text: '🚲'},
+    guitar: {color: 'brown', text: '🎸'},
+    pencil: {color: 'magenta', text: '✏️'},
+    clock: {color: 'yellow', text: '⏰'}
+}
+
 utils.formatPercent = (n) => {
     return (n*100).toFixed(2)+'%' // 2 Decimal Percentage
 }

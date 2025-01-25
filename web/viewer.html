@@ -3,27 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
     <title>Data Viewer</title>
   </head>
   <body>
     <h1>Data Viewer</h1>
+<div id="chartCn"></div>
     <div id="container"></div>
+    
     <script src="../common/jsObjects/features.js"></script>
+
     <script src="../common/utils.js"></script>
+    <script src="../common/draw.js"></script>
     <script src="../common/constants.js"></script>
+
     <script src="js/display.js"></script>
-
-    <script>
-      // console.log(samples);
-      const {samples, featureNames} = features
-      const groups = utils.groupBy(samples, "userID");
-      //-- Create Table
-
-      for (let userID in groups) {
-        const samples = groups[userID];
-        const userName = samples[0].userName;
-        createRow(container, userName, samples);
-      }
-    </script>
+    <script src="js/sketchPad.js"></script>
+    
+    <script src="./chart/chart.js"></script>
+    <script src="./chart/graphics.js"></script>
+    <script src="./chart/math.js"></script>
+    
+    <script src="js/viewerGlobal.js"></script>
   </body>
 </html>
